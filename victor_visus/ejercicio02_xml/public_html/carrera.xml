@@ -1,0 +1,85 @@
+<?xml version= "1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE Carreras_populares SYSTEM "carreraValida.dtd">
+
+<Carreras_populares>
+
+    <carreras cod_carrera="A10">
+        <caracteristicas>
+            <fecha dia="12" mes="marzo" anio="2021" />
+            <descripcion>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </descripcion>
+        </caracteristicas>
+
+        <equipo>
+            <persona cod_persona="H20">
+                <funcion tipo="Juez"/>
+                <nombre>Luis Miguel</nombre>
+                <apellido>López</apellido>
+                <direccion>
+                    <calle>
+                        Federico el de los palotes
+                    </calle>
+                    <num>23</num>
+                    <cp>64897</cp>
+                    <ciudad>Logroño</ciudad>
+                </direccion>
+            </persona>
+            <persona cod_persona="H25">
+                <funcion tipo="Corredor"/>
+                <nombre>Juan</nombre>
+                <apellido>Dominguez</apellido>
+                <direccion>
+                    <calle>
+                        Rua vieja
+                    </calle>
+                    <num>15</num>
+                    <cp>50222</cp>
+                    <ciudad>Zaragoza</ciudad>
+                </direccion>
+            </persona>
+            <persona cod_persona="H35">
+                <funcion tipo="Corredor"/>
+                <nombre>Angel</nombre>
+                <apellido>De la Rosa</apellido>
+                <direccion>
+                    <calle>
+                        de al lado
+                    </calle>
+                    <num>55</num>
+                    <cp>50059</cp>
+                    <ciudad>Zaragoza</ciudad>
+                </direccion>
+            </persona>
+        </equipo>
+
+        <recorrido nombre="altamira">
+            <longitud km="7"/>
+            <estado grado="Bueno" />
+        </recorrido>
+
+        <categorias nombre="Juvenil">
+            <edad_min edad="16" />
+            <edad_max edad="18" />
+        </categorias>
+
+        <categorias nombre="Senior">
+            <edad_min edad="20" />
+            <edad_max edad="80" />
+        </categorias>
+
+        <clasificaciones>
+            <posicion categoria="Juvenil" numero="1">
+                <nombre_corredor nombre="Angel de la Rosa" />
+                <tiempo tiempo_min="186" />
+            </posicion>
+            <posicion categoria="Juvenil" numero="2">
+                <nombre_corredor nombre="Luis Miguel López" />
+                <tiempo tiempo_min="197" />
+            </posicion>
+        </clasificaciones>
+
+    </carreras>
+
+</Carreras_populares>

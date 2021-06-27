@@ -1,0 +1,560 @@
+/* 
+    Created on : 15 ene. 2021, 22:34:28
+    Author     : Víctor Visús García
+*/
+
+/*
+Titulos : Muli - 700
+textos : Quicksand - 16px - 500
+botones : Quicksand - 15px - 700
+*/
+
+:root {
+    --color-primario: #5a4fdc;
+    --color-negro: #3b3950;
+    --color-blanco: #ffffff;
+
+    --color-titulos: var(--color-negro);
+    --color-parrafo: #9e9cb9;
+    --color-link: var(--color-primario);
+    --color-hover: var(--color-titulos);
+    --color-hover-btn: var(--color-blanco);
+
+    --sombra: rgba(90,79,220,.5);
+
+    --color-bg: var(--color-blanco);
+    --color-bg-alt: rgba(90,79,220,.03);
+
+    --font-titulos: 'Muli', sans-serif;
+    --font-parrafo: 'Quicksand' ,sans-serif;
+    --font-footer: var(--font-textos);
+
+    --div-column: calc(100% / 12);
+}
+
+/***************************************************************** formateo ****/
+*, :after, :before {
+    box-sizing: border-box;
+}
+body {
+    font-size: 15px;
+    font-family: var(--font-parrafo);
+    color: var(--color-negro);
+    background: var(--color-bg);
+    font-weight: 500;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1 {
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 6px rgba(14,10,65,.25);
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h4 {
+    font-size: 1.5rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulos);
+    font-weight: 700;
+    font-style: normal;
+}
+.weight-light {
+    font-weight: 300;
+}
+p, li {
+    color: var(--color-parrafo);
+    margin: 15px 0;
+    line-height: 1.8;
+}
+a {
+    font-weight: 600;
+    text-decoration: none!important;
+    outline: none;
+    color: var(--color-link);
+    transition: all .5s;
+}
+a:hover {
+    color: var(--color-hover);
+    text-shadow: 0 3px 2px var(--sombra);
+}
+svg {
+    overflow: hidden;
+}
+img, svg {
+    vertical-align: middle;
+}
+
+.bg-alt {
+    background: var(--color-bg-alt);
+    background-image: url(../img/hero-1-bg-img.png);
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.img-fluid {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/****************************************************************** botones ****/
+.btn-box {
+    margin-top: 3rem;
+}
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 3px;
+    padding: 12px 30px;
+    transition: all .5s;
+    font-weight: 700;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    transition: all .5s;
+}
+.btn-ghost {
+    border: 1px solid var(--color-link);
+    color: var(--color-link);
+}
+.btn-primary {
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    color: var(--color-hover-btn);
+    box-shadow: 0 4px 20px rgba(90,79,220,.15);
+}
+.btn-gris {
+    background-color: rgba(90,79,220,.18);
+    color: var(--color-primario)!important;
+}
+
+.btn-ghost:hover, .btn-primary:hover {
+    text-shadow: none;
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    box-shadow: 0 3px 10px var(--sombra);
+    color: var(--color-hover-btn);
+}
+.btn-gris:hover {
+    text-shadow: none;
+}
+
+/******************************************************************* iconos ****/
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.2rem;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: var(--color-primario);
+    vertical-align: middle!important;
+}
+
+/**** icono svg ****/
+.icon-xs {
+    height: 20px;
+    width: 20px;
+    margin-right: 0.3rem;
+}
+.icon-xxl,
+.icon-xxl svg {
+    height: 3rem;
+    width: 3rem;
+}
+.uim-icon-primary .uim-svg {
+    fill: var(--color-primario);
+}
+/**** ./ fin icono svg ****/
+
+/************************************************************* contenedores ****/
+.section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+}
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.column, div[class*="col-"] {
+    position: relative;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.col-12 {
+    flex-basis: calc( var(--div-column) * 12 );
+    max-width: calc( var(--div-column) * 12 );
+}
+.col-8 {
+    flex-basis: calc( var(--div-column) * 8 );
+    max-width: calc( var(--div-column) * 8 );
+}
+.col-7 {
+    flex-basis: calc( var(--div-column) * 7);
+    max-width: calc( var(--div-column) * 7);
+}
+.col-6 {
+    flex-basis: calc( var(--div-column) * 6);
+    max-width: calc( var(--div-column) * 6);
+}
+.col-5 {
+    flex-basis: calc( var(--div-column) * 5);
+    max-width: calc( var(--div-column) * 5);
+}
+.col-4 {
+    flex-basis: calc( var(--div-column) * 4);
+    max-width: calc( var(--div-column) * 4);
+}
+
+
+/********************************************************************** nav ****/
+.navbar {
+    padding: 14px 0;
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.06);
+}
+.sticky {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+}
+.navbar .container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo {
+    padding: 5px 0;
+}
+#main-menu {
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+
+}
+#menu-web.navbar-nav {
+    margin: auto;
+}
+.nav-item .nav-link {
+    display: inline-block;
+}
+.navbar-nav .nav-item a.nav-link {
+    line-height: 2em;
+    color: var(--color-parrafo);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 6px 0;
+    margin: 0 20px;
+}
+.navbar-nav .nav-item a.nav-link:hover {
+    text-shadow: none;
+    color: var(--color-link)
+}
+
+
+/******************************************************************* header ****/
+.header-home {
+    padding: 130px 0 110px;
+    width: 100%;
+}
+
+.header-home h1 {
+    margin-bottom: 1.5rem;
+}
+.header-home .descripcion {
+    width: 75%;
+}
+.header-home .descripcion p {
+    font-size: 1.1rem;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+}
+
+.header-home .subscribe-form form {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-home .subscribe-form form input {
+    padding: 17px 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-right: 160px;
+    padding-left: 20px;
+    background-color: var(--color-bg-alt);
+    border-radius: 4px;
+    line-height: 24px;
+}
+.header-home .subscribe-form button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+/***************************************************************** Choos Us ****/
+.icono-cubo {
+    background-color: var(--color-bg-alt);
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    border-radius: 0.3rem;
+}
+
+#choose-us .descripcion p {
+    margin-bottom: 1.5rem;
+}
+.column-box {
+    box-shadow: 0 3px 12px var(--sombra);
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all .5s;
+}
+.skills .row .col-6:first-child .column-box:first-child {
+    margin-top: 3rem;
+}
+.column-box-icon {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--color-bg-alt);
+    color: var(--color-primario);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column-box h5 {
+    margin-top: 1.5rem;
+    transition: all .5s;
+}
+
+/**** Hover de las cajas ****/
+.column-box:hover {
+    background: var(--color-link);
+    box-shadow: 0 5px 18px var(--sombra);
+    transform: translateY(-6px);
+}
+.column-box:hover .column-box-icon {
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.04);
+}
+.column-box:hover .column-box-icon i {
+    color: #fff!important;
+}
+.column-box:hover h5 {
+    color: var(--color-blanco);
+}
+
+
+/***************************************************************** features ****/
+
+#features .container .row:first-child {
+    margin-bottom: 3rem;
+}
+#features .container .row:first-child h3.titulo,
+#features .container .row:first-child p {
+    text-align: center;
+}
+
+#features .descripcion,
+#features02 .descripcion {
+    justify-content: space-between;
+}
+
+#features .subtitulo {
+    text-transform: uppercase;
+}
+#features .subtitulo .material-icons {
+    margin-right: 10px;
+}
+#features .titulo span {
+    font-weight: 700;
+}
+
+#features02 .container .row {
+    flex-direction: row-reverse;
+}
+
+
+/****************************************************************** pricing ****/
+#pricing.bg-alt {
+    background-image: none;
+}
+#pricing .container .row:first-child {
+    margin-bottom: 1rem;
+}
+#pricing .container .row:first-child h3.titulo,
+#pricing .container .row:first-child p {
+    text-align: center;
+}
+.col-precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: calc( (var(--div-column) * 4) - 2rem);
+    background: var(--color-blanco);
+    box-shadow: 0 3px 12px var(--sombra);
+    background-image: url(../img/bg-col-precio.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+.col-precio .icono {
+    background: var(--color-bg-alt);
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    margin: 1.5rem auto;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    transition: all .5s;
+}
+.col-precio:nth-child(2) .icono {
+    background: var(--color-primario);
+    border-top-left-radius: 0%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+.col-precio:nth-child(2) .icono .material-icons {
+    color: var(--color-blanco);
+}
+.col-precio .icono .material-icons {
+    font-size: 3rem;
+}
+.col-precio h4 {
+    text-shadow: 3px 3px 6px rgba(14,10,65,.25);
+}
+.col-precio span {
+    font-size: 1.5rem;
+    display: inline-block;
+    position: relative;
+    top: -0.6em;
+}
+.col-precio ul {
+    margin-bottom: 1.5rem;
+}
+.col-precio ul li {
+    margin: unset;
+    padding: 10px 0;
+}
+
+/**** Hover de las cajas-precios ****/
+.col-precio:hover .icono {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    border-top-left-radius: 0%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+.col-precio:nth-child(2):hover .icono {
+    background: var(--color-bg-alt);
+    color: var(--color-primario);
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%;
+}
+.col-precio:hover .icono .material-icons{
+    color: var(--color-blanco);
+}
+.col-precio:nth-child(2):hover .icono .material-icons {
+    color: var(--color-primario);
+}
+
+/****************************************************************** pricing ****/
+
+#blog .container .row:first-child h3.titulo,
+#blog .container .row:first-child p {
+    text-align: center;
+}
+#blog ul.fecha {
+    margin: 1rem 0 0.5rem 0;
+}
+#blog ul.fecha li {
+    display: inline-block;
+    margin-right: 1.5em;
+}
+#blog ul.fecha li svg {
+    margin-right: 0.8em;
+}
+.cajas-blog a h4 {
+    color: var(--color-negro);
+    text-shadow: none;
+}
+
+
+/***************************************************************** contacto ****/
+
+#contact .container .row:first-child h3.titulo,
+#contact .container .row:first-child p {
+    text-align: center;
+}
+#contact .container>.row {
+    margin-bottom: 3rem;
+}
+
+/** Estilo formulario **/
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.form-control {
+    padding: 8px 10px;
+    height: 40px;
+    background-color: rgba(59,57,80,.01);
+    border: 1px solid rgba(158,156,185,.3);
+    display: block;
+    width: 100%;
+}
+.datos-constact p {
+    text-align: left!important;
+}

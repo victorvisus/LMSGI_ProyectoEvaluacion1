@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Carreras_populares (carreras+)>
+
+    <!ELEMENT carreras (caracteristicas,equipo,recorrido,categorias+,clasificaciones)>
+    <!ATTLIST carreras cod_carrera ID #REQUIRED>
+
+     <!-- CARACTERÍSTICAS -->
+        <!ELEMENT caracteristicas (fecha,descripcion)>
+
+        <!-- Caracterristicas.fecha -->
+            <!ELEMENT fecha EMPTY>
+            <!ATTLIST fecha dia CDATA #REQUIRED >
+            <!ATTLIST fecha mes (enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre) #REQUIRED >
+            <!ATTLIST fecha anio CDATA #REQUIRED >
+        <!-- Caracteristicas.descripcion -->
+            <!ELEMENT descripcion ANY>
+
+      <!--EQUIPO -->
+        <!ELEMENT equipo (persona+)>
+
+        <!-- Equipo.personas -->
+            <!ELEMENT persona (funcion,nombre,apellido,direccion)>
+            <!ATTLIST persona cod_persona ID #REQUIRED>
+              <!-- Equipo.personas.funcion -->
+                <!ELEMENT funcion EMPTY>
+                <!ATTLIST funcion tipo (Juez|Corredor|Organizador|Auxiliar) #REQUIRED>
+              <!-- Equipo.personas.nombre -->
+                <!ELEMENT nombre (#PCDATA)>
+              <!-- Equipo.personas.apellido -->
+                <!ELEMENT apellido (#PCDATA)>
+              <!-- Equipo.personas.direccion -->
+                <!ELEMENT direccion (calle, num, cp, ciudad)>
+                    <!ELEMENT calle (#PCDATA)>
+                    <!ELEMENT num (#PCDATA)>
+                    <!ELEMENT cp (#PCDATA)>
+                    <!ELEMENT ciudad (#PCDATA)>
+
+
+      <!-- RECORRIDO -->
+        <!ELEMENT recorrido (longitud,estado)>
+        <!ATTLIST recorrido nombre CDATA #REQUIRED>
+
+          <!-- Recorrido.longitud -->
+            <!ELEMENT longitud EMPTY>
+            <!ATTLIST longitud km CDATA #REQUIRED>
+          <!-- Recorrido.estado -->
+            <!ELEMENT estado EMPTY>
+            <!ATTLIST estado grado (Bueno|Medio|Malo) #REQUIRED>
+
+
+      <!-- CATEGORIAS -->
+        <!ELEMENT categorias (edad_min,edad_max)>
+        <!ATTLIST categorias nombre (Benjamin|Alevin|Infantil|Cadete|Juvenil|Senior) #REQUIRED>
+
+          <!-- Categoriass.edad_min -->
+            <!ELEMENT edad_min EMPTY>
+            <!ATTLIST edad_min edad CDATA #REQUIRED>
+          <!-- Categoriass.edad_max -->
+            <!ELEMENT edad_max EMPTY>
+            <!ATTLIST edad_max edad CDATA #REQUIRED>
+
+
+      <!-- CLASIFICACIONES -->
+        <!ELEMENT clasificaciones (posicion+)>
+
+          <!-- Clasificaciones.posicion -->
+            <!ELEMENT posicion (nombre_corredor,tiempo)>
+            <!ATTLIST posicion categoria CDATA #REQUIRED>
+            <!ATTLIST posicion numero CDATA #REQUIRED>
+              <!-- Clasificacion.posicion.nombre_corredor -->
+                <!ELEMENT nombre_corredor EMPTY>
+                <!ATTLIST nombre_corredor nombre CDATA #REQUIRED>
+              <!-- Clasificacion.posicion.tiempo -->
+                <!ELEMENT tiempo EMPTY>
+                <!ATTLIST tiempo tiempo_min CDATA #REQUIRED>
